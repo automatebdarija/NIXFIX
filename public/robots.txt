@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nixiptv.com/sitemap.xml
