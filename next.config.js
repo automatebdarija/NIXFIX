@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'standalone',
   typescript: {
     // Ensure TS errors are caught during build
     ignoreBuildErrors: false,
