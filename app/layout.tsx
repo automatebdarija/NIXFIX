@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     url: 'https://nixiptv.com/',
     title: 'Best IPTV Subscription 2025 | #1 Rated 4K Anti-Freeze Service - Nixiptv',
     description: 'Stop Buffering. Start Streaming. Get 35,000+ Channels & VOD in 4K. Instant delivery, 24/7 Support, and a 100% Satisfaction Guarantee.',
-    images: ['https://i.ibb.co/Kxb94hd9/4kiv-iptv-logo.png'],
+    images: ['https://nixiptv.com/images/logo.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Best IPTV Subscription 2025 | #1 Rated 4K Anti-Freeze Service - Nixiptv',
     description: 'Stop Buffering. Start Streaming. Get 35,000+ Channels & VOD in 4K. Instant delivery.',
-    images: ['https://i.ibb.co/Kxb94hd9/4kiv-iptv-logo.png'],
+    images: ['https://nixiptv.com/images/logo.png'],
   },
 };
 
@@ -39,8 +39,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${alexandria.variable}`}>
       <head>
-        <link rel="preload" as="image" href="https://i.ibb.co/1Jf7BwTb/HD-wallpaper-black-banner-1-1.jpg" fetchPriority="high" />
-        <link rel="icon" type="image/png" href="https://i.ibb.co/pv1ZLhJk/4kiv-fav.png" />
+        <link rel="preload" as="image" href="/images/hero-bg.jpg" fetchPriority="high" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
       <body>
         <Script
@@ -88,7 +88,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Nixiptv",
               "url": "https://nixiptv.com/",
-              "logo": "https://i.ibb.co/Kxb94hd9/4kiv-iptv-logo.png",
+              "logo": "https://nixiptv.com/images/logo.png",
               "sameAs": [
                 "https://twitter.com/nixiptv",
                 "https://www.facebook.com/nixiptv"
@@ -109,7 +109,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Product",
               "name": "Nixiptv Premium IPTV Subscription",
-              "image": "https://i.ibb.co/5gdNzH3M/devices-1.webp",
+              "image": "https://nixiptv.com/images/devices.webp",
               "description": "Premium IPTV subscription service offering 35,000+ live channels and 150,000+ VODs in 4K/FHD. Compatible with Firestick, Android, and Smart TVs.",
               "brand": {
                 "@type": "Brand",
