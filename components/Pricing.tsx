@@ -3,10 +3,12 @@
 
 import React, { useState } from 'react';
 import { getPlans, useLanguage, PRICING_MATRIX } from '../i18n';
+import { usePayment } from './PaymentContext';
 import { Check, Crown, Zap, Star } from 'lucide-react';
 
 const Pricing: React.FC = () => {
   const { lang, t } = useLanguage();
+  const { openModal } = usePayment();
   const [deviceCount, setDeviceCount] = useState(1);
 
   const PLANS = getPlans(lang);
@@ -64,15 +66,6 @@ const Pricing: React.FC = () => {
             const price = PRICING_MATRIX[deviceCount][plan.duration];
             const [priceWhole, priceCents] = price.split('.');
 
-            const PAYMENT_LINKS: Record<number, Record<number, string>> = {
-              1: { 1: 'https://onei.la/6e1', 6: 'https://onei.la/p1a', 12: 'https://onei.la/iMU' },
-              2: { 1: 'https://onei.la/7qx', 6: 'https://onei.la/gyd', 12: 'https://onei.la/kjE' },
-              3: { 1: 'https://onei.la/MDE', 6: 'https://onei.la/U7n', 12: 'https://onei.la/r21' },
-              4: { 1: 'https://onei.la/ZiU', 6: 'https://onei.la/6KU', 12: 'https://onei.la/64W' }
-            };
-
-            const paymentLink = PAYMENT_LINKS[deviceCount]?.[plan.duration] || '#';
-
             return (
               <div
                 key={index}
@@ -121,17 +114,15 @@ const Pricing: React.FC = () => {
                   ))}
                 </ul>
 
-                <a
-                  href={paymentLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => openModal({ deviceCount, duration: plan.duration })}
                   className={`block text-center w-full py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all mb-4 border ${isCenter
                     ? 'bg-brand-gold text-black border-brand-gold hover:bg-white hover:border-white shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]'
                     : 'bg-white/5 text-white border-white/10 hover:bg-white hover:text-black hover:border-white'
                     }`}
                 >
                   {t.pricing.choose}
-                </a>
+                </button>
 
                 <div className="flex justify-center items-center gap-2 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
                   <img src="/images/secure-checkout.avif" className="h-6 w-auto object-contain" alt="Secure Checkout" />

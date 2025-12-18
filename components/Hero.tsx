@@ -4,14 +4,15 @@
 import React from 'react';
 import { Play, List, Star, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../i18n';
+import { usePayment } from './PaymentContext';
 
 const Hero: React.FC = () => {
   const { t, navigate } = useLanguage();
+  const { openModal } = usePayment();
 
   const handleGetStartedClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('pricing');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    openModal({ deviceCount: 1, duration: 12 });
   };
 
   const handleChannelsClick = (e: React.MouseEvent) => {
