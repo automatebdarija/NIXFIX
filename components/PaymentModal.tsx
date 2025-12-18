@@ -5,16 +5,12 @@ import { X, Check, ShieldCheck, CreditCard, ChevronRight } from 'lucide-react';
 import { usePayment } from './PaymentContext';
 import { useLanguage, PRICING_MATRIX } from '../i18n';
 
-const PAYMENT_LINKS: Record<number, Record<number, string>> = {
-    1: { 1: 'https://onei.la/6e1', 6: 'https://onei.la/p1a', 12: 'https://onei.la/iMU' },
-    2: { 1: 'https://onei.la/7qx', 6: 'https://onei.la/gyd', 12: 'https://onei.la/kjE' },
-    3: { 1: 'https://onei.la/MDE', 6: 'https://onei.la/U7n', 12: 'https://onei.la/r21' },
-    4: { 1: 'https://onei.la/ZiU', 6: 'https://onei.la/6KU', 12: 'https://onei.la/64W' }
-};
+
 
 const PaymentModal: React.FC = () => {
     const { state, closeModal, setPaymentState } = usePayment();
     const { t } = useLanguage();
+    const [isLoading, setIsLoading] = React.useState(false);
 
     // Prevent background scroll when open
     useEffect(() => {
@@ -29,13 +25,42 @@ const PaymentModal: React.FC = () => {
     if (!state.isOpen) return null;
 
     const price = PRICING_MATRIX[state.deviceCount][state.duration];
-    const paymentLink = PAYMENT_LINKS[state.deviceCount]?.[state.duration] || '#';
+    const planName = state.duration === 1 ? '1 Month' : state.duration === 6 ? '6 Months' : '12 Months';
+
+    const handleProceed = async (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        try {
+            const response = await fetch('/api/create-checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount: parseFloat(price),
+                    type: 'ONE_TIME',
+                    external_id: `order_${Date.now()}_${state.deviceCount}_${state.duration}`
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.checkout_url) {
+                window.location.href = data.checkout_url;
+            } else {
+                console.error('No checkout URL returned', data);
+                alert('Payment initialization failed. Please try again.');
+            }
+        } catch (error) {
+            console.error('Payment error:', error);
+            alert('Something went wrong. Please check your connection.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     const handleBackdropClick = (e: React.MouseEvent) => {
         if (e.target === e.currentTarget) closeModal();
     };
-
-    const planName = state.duration === 1 ? '1 Month' : state.duration === 6 ? '6 Months' : '12 Months';
 
     return (
         <div
@@ -129,15 +154,14 @@ const PaymentModal: React.FC = () => {
                     </div>
 
                     {/* Action Button */}
-                    <a
-                        href={paymentLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 hover:scale-[1.02] transition-transform shadow-[0_4px_20px_rgba(255,215,0,0.3)]"
+                    <button
+                        onClick={handleProceed}
+                        disabled={isLoading}
+                        className={`group w-full py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-black uppercase tracking-widest text-sm flex items-center justify-center gap-3 hover:scale-[1.02] transition-transform shadow-[0_4px_20px_rgba(255,215,0,0.3)] ${isLoading ? 'opacity-70 cursor-wait' : ''}`}
                     >
-                        Proceed to Payment
-                        <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
+                        {isLoading ? 'Processing...' : 'Proceed to Payment'}
+                        {!isLoading && <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />}
+                    </button>
 
                     <div className="flex items-center justify-center gap-2 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
                         <CreditCard size={12} />
