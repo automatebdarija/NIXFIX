@@ -1,11 +1,6 @@
-import React from 'react';
-import type { Metadata } from 'next';
-import { Montserrat, Alexandria } from 'next/font/google';
+import { Metadata } from 'next';
 import './globals.css';
 import Script from 'next/script';
-
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ['400', '500', '700', '900'] });
-const alexandria = Alexandria({ subsets: ['latin'], variable: '--font-alexandria', weight: ['400', '700', '900'] });
 
 export const metadata: Metadata = {
   title: 'Best IPTV Subscription 2025 | #1 Rated 4K Anti-Freeze Service - Nixiptv',
@@ -37,12 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${alexandria.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700;900&family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <link rel="preload" as="image" href="/images/hero-bg.jpg" fetchPriority="high" />
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
-      <body>
+      <body style={{
+        '--font-montserrat': "'Montserrat', sans-serif",
+        '--font-alexandria': "'Alexandria', sans-serif"
+      } as React.CSSProperties}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LY1K9PCMRZ"
           strategy="afterInteractive"
