@@ -19,7 +19,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'The Future of Streaming is Here', title1: 'UNLEASH', title2: 'LIMITLESS', title3: 'ENTERTAINMENT',
       desc: 'Experience the ultimate revolution in home entertainment. Stream over 35,000 live channels, blockbuster movies, and binge-worthy series in stunning 4K UHD—completely buffer-free.',
-      cta1: 'START FREE TRIAL', cta2: 'VIEW CHANNELS',
+      cta1: 'GET STARTED', cta2: 'VIEW CHANNELS',
       stats: { users: 'Happy Streamers', channels: 'Premium Channels', vod: 'Movies & Series' },
       ratings: '5-star reviews'
     },
@@ -66,7 +66,7 @@ export const TRANSLATIONS = {
         { q: "What distinguishes Nixiptv?", a: "Premium servers, Anti-Freeze tech, 99.9% uptime, true 4K." },
         { q: "Recommended speed?", a: "25 Mbps for 4K. 15 Mbps for HD." },
         { q: "VPN required?", a: "Not required, but supported." },
-        { q: "Free trial?", a: "Yes, 24-hour trial available." },
+
         { q: "Delivery time?", a: "Instant via Email & WhatsApp." },
         { q: "Multiple screens?", a: "Standard is 1 connection. Contact support for more." },
         { q: "Buffering?", a: "Rare. Check internet or use Ethernet." }
@@ -93,7 +93,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'Le Futur du Streaming est Ici', title1: 'DÉBLOQUEZ', title2: 'LE DIVERTISSEMENT', title3: 'SANS LIMITES',
       desc: 'Vivez la révolution du divertissement à domicile. Plus de 35 000 chaînes en direct, films et séries en 4K UHD époustouflante, sans aucune coupure.',
-      cta1: 'ESSAI GRATUIT', cta2: 'VOIR LES CHAÎNES',
+      cta1: 'COMMENCER', cta2: 'VOIR LES CHAÎNES',
       stats: { users: 'Clients Satisfaits', channels: 'Chaînes Premium', vod: 'Films & Séries' },
       ratings: 'avis 5 étoiles'
     },
@@ -140,7 +140,7 @@ export const TRANSLATIONS = {
         { q: "Pourquoi choisir Nixiptv ?", a: "Nixiptv utilise des serveurs premium avec technologie Anti-Freeze™ pour garantir une disponibilité de 99,9% et une vraie qualité 4K." },
         { q: "Quelle vitesse internet faut-il ?", a: "Pour la 4K fluide, nous recommandons 25 Mbps stable. Pour la HD, 15 Mbps suffisent." },
         { q: "Faut-il un VPN ?", a: "Ce n'est pas obligatoire, mais supporté si vous souhaitez contourner les blocages FAI ou améliorer votre confidentialité." },
-        { q: "Puis-je tester avant d'acheter ?", a: "Absolument. Profitez de notre essai 24h pour vérifier la qualité et la liste des chaînes." },
+
         { q: "Quand recevrai-je mes codes ?", a: "C'est instantané. Vous recevez vos accès par Email et WhatsApp dès le paiement validé." },
         { q: "Peut-on utiliser plusieurs écrans ?", a: "Le plan standard est pour une connexion. Contactez le support pour ajouter des écrans." },
         { q: "Que faire en cas de buffering ?", a: "C'est rare, souvent lié au réseau local. Utilisez un câble Ethernet. Si ça persiste, notre support 24/7 est là." }
@@ -167,7 +167,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'El Futuro del Streaming está Aquí', title1: 'DESATA', title2: 'EL ENTRETENIMIENTO', title3: 'ILIMITADO',
       desc: 'Vive la revolución del entretenimiento en casa. Más de 35,000 canales en vivo, películas y series en impresionante 4K UHD, sin cortes.',
-      cta1: 'PRUEBA GRATIS', cta2: 'VER CANALES',
+      cta1: 'EMPEZAR', cta2: 'VER CANALES',
       stats: { users: 'Usuarios Felices', channels: 'Canales Premium', vod: 'Películas y Series' },
       ratings: 'reseñas 5 estrellas'
     },
@@ -214,7 +214,7 @@ export const TRANSLATIONS = {
         { q: "¿Por qué Nixiptv?", a: "Servidores premium, Anti-Freeze, 99.9% uptime, 4K real." },
         { q: "¿Velocidad recomendada?", a: "25 Mbps para 4K. 15 Mbps para HD." },
         { q: "¿Necesito VPN?", a: "No es obligatorio, pero es compatible." },
-        { q: "¿Hay prueba gratis?", a: "Sí, prueba de 24 horas disponible." },
+
         { q: "¿Tiempo de entrega?", a: "Inmediato por Email y WhatsApp." },
         { q: "¿Múltiples pantallas?", a: "Plan estándar es 1 conexión. Contactar soporte para más." },
         { q: "¿Buffering?", a: "Raro. Usar cable Ethernet. Contactar soporte." }
@@ -241,7 +241,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'Die Zukunft des Streamings', title1: 'GRENZENLOSE', title2: 'UNTERHALTUNG', title3: 'ERLEBEN',
       desc: 'Erleben Sie die ultimative Revolution im Home Entertainment. Über 35.000 Live-Sender, Filme und Serien in atemberaubendem 4K UHD – völlig pufferfrei.',
-      cta1: 'GRATIS TESTEN', cta2: 'SENDER ANSEHEN',
+      cta1: 'LOSLEGEN', cta2: 'SENDER ANSEHEN',
       stats: { users: 'Glückliche Kunden', channels: 'Premium Sender', vod: 'Filme & Serien' },
       ratings: '5-Sterne Bewertungen'
     },
@@ -288,7 +288,7 @@ export const TRANSLATIONS = {
         { q: "Warum Nixiptv?", a: "Premium Server, Anti-Freeze, 4K." },
         { q: "Internetgeschwindigkeit?", a: "25 Mbps für 4K." },
         { q: "VPN?", a: "Nicht nötig, aber möglich." },
-        { q: "Test?", a: "24h Test verfügbar." },
+
         { q: "Lieferung?", a: "Sofort per Mail." },
         { q: "Multi-Screen?", a: "Standard 1 Connection." },
         { q: "Buffering?", a: "LAN Kabel nutzen." }
@@ -315,7 +315,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'مستقبل البث الرقمي هنا', title1: 'أطلق العنان', title2: 'لترفيه', title3: 'بلا حدود',
       desc: 'استمتع بثورة الترفيه المنزلي. شاهد أكثر من 35,000 قناة مباشرة، وأفلام ومسلسلات بجودة 4K UHD المذهلة - بدون تقطيع نهائياً.',
-      cta1: 'جرب مجاناً', cta2: 'استعرض القنوات',
+      cta1: 'ابدأ الآن', cta2: 'استعرض القنوات',
       stats: { users: 'مشترك سعيد', channels: 'قناة مميزة', vod: 'فيلم ومسلسل' },
       ratings: 'تقييم 5 نجوم'
     },
@@ -362,7 +362,7 @@ export const TRANSLATIONS = {
         { q: "لماذا Nixiptv؟", a: "سيرفرات قوية، بدون تقطيع، 4K." },
         { q: "السرعة المطلوبة؟", a: "25 ميجا للـ 4K." },
         { q: "هل أحتاج VPN؟", a: "ليس ضرورياً." },
-        { q: "تجربة مجانية؟", a: "نعم، 24 ساعة متاحة." },
+
         { q: "التسليم؟", a: "فوري." },
         { q: "شاشات متعددة؟", a: "الباقة الأساسية شاشة واحدة." },
         { q: "التقطيع؟", a: "نادر. استخدم كيبل." }
@@ -389,7 +389,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'Будущее ТВ уже здесь', title1: 'ОТКРОЙТЕ', title2: 'БЕЗГРАНИЧНЫЕ', title3: 'РАЗВЛЕЧЕНИЯ',
       desc: 'Испытайте революцию в домашних развлечениях. Более 35 000 каналов, фильмы и сериалы в 4K UHD — без буферизации.',
-      cta1: 'ПОПРОБОВАТЬ', cta2: 'КАНАЛЫ',
+      cta1: 'НАЧАТЬ', cta2: 'КАНАЛЫ',
       stats: { users: 'Подписчиков', channels: 'Каналов', vod: 'Фильмов' },
       ratings: '5 звезд'
     },
@@ -436,7 +436,7 @@ export const TRANSLATIONS = {
         { q: "Почему Nixiptv?", a: "Премиум серверы, 4K, без лагов." },
         { q: "Скорость?", a: "25 Мбит для 4K." },
         { q: "VPN?", a: "Не обязательно." },
-        { q: "Тест?", a: "24 часа бесплатно." },
+
         { q: "Доставка?", a: "Сразу на Email." },
         { q: "Мультирум?", a: "Базовый - 1 экран." },
         { q: "Буферизация?", a: "Редко. Проверьте интернет." }
@@ -463,7 +463,7 @@ export const TRANSLATIONS = {
     hero: {
       tag: 'O Futuro do Streaming Chegou', title1: 'LIBERE', title2: 'ENTRETENIMENTO', title3: 'SEM LIMITES',
       desc: 'Experimente a revolução. Mais de 35.000 canais ao vivo, filmes e séries em 4K UHD.',
-      cta1: 'TESTE GRÁTIS', cta2: 'VER CANAIS',
+      cta1: 'COMEÇAR', cta2: 'VER CANAIS',
       stats: { users: 'Clientes Felizes', channels: 'Canais Premium', vod: 'Filmes & Séries' },
       ratings: 'avaliações 5 estrelas'
     },
@@ -510,7 +510,7 @@ export const TRANSLATIONS = {
         { q: "Por que Nixiptv?", a: "Servidores estáveis, 4K, suporte." },
         { q: "Velocidade?", a: "25 Mega para 4K." },
         { q: "VPN?", a: "Opcional." },
-        { q: "Teste?", a: "Sim, 24h." },
+
         { q: "Entrega?", a: "Imediata." },
         { q: "Telas?", a: "1 tela padrão." },
         { q: "Travando?", a: "Use cabo de rede." }
