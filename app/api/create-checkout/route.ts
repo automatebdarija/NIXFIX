@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { amount, type = 'ONE_TIME', external_id, payer } = body;
+        const { amount, title, type = 'ONE_TIME', external_id, payer } = body;
 
         const apiKey = process.env.ONE_API_KEY;
         const apiSecret = process.env.ONE_API_SECRET;
@@ -13,8 +13,8 @@ export async function POST(req: Request) {
         }
 
         const payload = {
-            type,
             amount,
+            title: title || 'Nixiptv Subscription',
             currency: 'USD',
             external_id: external_id || `order_${Date.now()}`,
             origin: 'API',

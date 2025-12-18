@@ -37,7 +37,7 @@ const PaymentModal: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     amount: parseFloat(price),
-                    type: 'ONE_TIME',
+                    title: `Nixiptv Premium - ${state.deviceCount} Device(s) - ${planName}`,
                     external_id: `order_${Date.now()}_${state.deviceCount}_${state.duration}`
                 })
             });
