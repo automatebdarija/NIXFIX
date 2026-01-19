@@ -3,10 +3,12 @@
 
 import React, { useState } from 'react';
 import { getPlans, useLanguage, PRICING_MATRIX } from '../i18n';
+import { usePayment } from './PaymentContext';
 import { Check, Crown, Zap, Star } from 'lucide-react';
 
 const Pricing: React.FC = () => {
   const { lang, t } = useLanguage();
+  const { openModal } = usePayment();
   const [deviceCount, setDeviceCount] = useState(1);
 
   const PLANS = getPlans(lang);
@@ -67,12 +69,13 @@ const Pricing: React.FC = () => {
             const message = `Hello Nixiptv, I would like to subscribe to the ${plan.name} plan for ${deviceCount} ${deviceCount === 1 ? 'device' : 'devices'} at $${price}.`;
             const whatsappLink = `https://wa.me/447735029723?text=${encodeURIComponent(message)}`;
 
+
             return (
               <div
                 key={index}
                 className={`relative rounded-[2.5rem] p-8 md:p-10 flex flex-col transition-all duration-500 group h-full ${isCenter
-                    ? 'bg-zinc-900/80 border-2 border-brand-gold shadow-[0_0_60px_rgba(255,215,0,0.15)] z-10 transform md:-translate-y-8 backdrop-blur-xl'
-                    : 'glass-card hover:-translate-y-3'
+                  ? 'bg-zinc-900/80 border-2 border-brand-gold shadow-[0_0_60px_rgba(255,215,0,0.15)] z-10 transform md:-translate-y-8 backdrop-blur-xl'
+                  : 'glass-card hover:-translate-y-3'
                   }`}
               >
                 {plan.popular && (
@@ -120,15 +123,15 @@ const Pricing: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block text-center w-full py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all mb-4 border ${isCenter
-                      ? 'bg-brand-gold text-black border-brand-gold hover:bg-white hover:border-white shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]'
-                      : 'bg-white/5 text-white border-white/10 hover:bg-white hover:text-black hover:border-white'
+                    ? 'bg-brand-gold text-black border-brand-gold hover:bg-white hover:border-white shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]'
+                    : 'bg-white/5 text-white border-white/10 hover:bg-white hover:text-black hover:border-white'
                     }`}
                 >
                   {t.pricing.choose}
                 </a>
 
                 <div className="flex justify-center items-center gap-2 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
-                  <img src="https://i.ibb.co/dsX3dkjc/secure-checkout-1.avif" className="h-6 w-auto object-contain" alt="Secure Checkout" />
+                  <img src="/images/secure-checkout.avif" className="h-6 w-auto object-contain" alt="Secure Checkout" />
                   <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Secure Payment</span>
                 </div>
               </div>

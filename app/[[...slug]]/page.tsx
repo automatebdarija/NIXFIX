@@ -5,6 +5,8 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import { TRANSLATIONS, Language, LanguageContext } from '@/i18n';
+import { PaymentProvider } from '@/components/PaymentContext';
+import PaymentModal from '@/components/PaymentModal';
 
 // Lazy load other heavy components
 const Reviews = React.lazy(() => import('@/components/Reviews'));
@@ -294,13 +296,16 @@ export default function Page() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, navigate, t: TRANSLATIONS[lang] }}>
-      <Navbar />
-      <main className="flex-grow">
-        {renderContent()}
-      </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <PaymentProvider>
+        <Navbar />
+        <main className="flex-grow">
+          {renderContent()}
+        </main>
+        <PaymentModal />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      </PaymentProvider>
     </LanguageContext.Provider>
   );
 }
